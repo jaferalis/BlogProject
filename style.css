@@ -1,0 +1,16 @@
+.small-text {
+    font-size: smaller;
+}
+.smaller-text {
+    font-size:x-small
+}
+.card {
+    text-align: center;
+}
+/* The below does not seem to work. Need to check*/
+.no-link-text {
+    color: black;
+    text-decoration: none;
+    text-decoration-line: none;
+}
+

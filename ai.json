@@ -1,0 +1,20 @@
+[
+    {
+      "userId": 1,
+      "id": 1,
+      "card-title": "Blog on Mean Stack-1",
+      "card-text": "This blog explains Mean Stack 1"
+    },
+    {
+        "userId": 2,
+        "id": 2,
+        "title": "Blog on Mean Stack-2",
+        "body": "This blog explains Mean Stack 2"
+    },
+    {
+        "userId": 3,
+        "id": 3,
+        "title": "Blog on Mean Stack-3",
+        "body": "This blog explains Mean Stack 3"
+    }
+];
