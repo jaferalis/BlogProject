@@ -1,5 +1,5 @@
 
-const cardsAIData = [
+cardsAIData = [
     {
       "userId": 1,
       "id": 1,

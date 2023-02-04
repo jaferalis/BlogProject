@@ -60,9 +60,10 @@ function load() {
 function loadMeanData(){
   // Load mean-container
   const cardsContainer = document.getElementById('mean-container');
+
   // cardsData contains data from JSON or HTTP Get API call
   cardsMeanData.forEach((cardAIData) => {
-    const card = createCard(cardAIData);
+    const card = createCard(cardAIData,"Mean Stack.png");
     cardsContainer.appendChild(card);
   });
 } 
@@ -73,7 +74,7 @@ function loadCloudData(){
     const cardsContainer = document.getElementById('cloud-container');
     // cardsData contains data from JSON or HTTP Get API call
     cardsCloudData.forEach((cardAIData) => {
-      const card = createCard(cardAIData);
+      const card = createCard(cardAIData,"cloud.PNG");
       cardsContainer.appendChild(card);
     });
 } 
@@ -83,7 +84,7 @@ function loadAIData(){
     const cardsContainer = document.getElementById('ai-container');
     // cardsData contains data from JSON or HTTP Get API call
     cardsAIData.forEach((cardAIData) => {
-      const card = createCard(cardAIData);
+      const card = createCard(cardAIData, "ai.png");
       cardsContainer.appendChild(card);
     });
 } 
@@ -92,10 +93,51 @@ document.getElementById("mean-stack-button").addEventListener("click", function 
   // show the login screen again
   // Need to interate the card data in the JSON. Here data is cardsData
   const cardsContainer = document.getElementById('mean-container');
-  //   cardsData contains data from JSON or HTTP Get API call
+  // remove all the child elements
+  while (cardsContainer.childElementCount > 0) {
+    cardsContainer.removeChild(cardsContainer.lastChild);
+  }
+  
+  // Mean data is populated with cardsMeanData from meanData.js
+  cardsMeanData.forEach((cardMeanData) => {
+    const card = createCard(cardMeanData,"Mean Stack.png");
+    cardsContainer.appendChild(card);
+  });
+});
+
+
+document.getElementById("ai-stack-button").addEventListener("click", function () {
+  // show the login screen again
+  // Need to interate the card data in the JSON. Here data is cardsData
+  const cardsContainer = document.getElementById('ai-container');
+  
+  // remove all the child elements
+  while (cardsContainer.childElementCount > 0) {
+    cardsContainer.removeChild(cardsContainer.lastChild);
+  }
+  
+  // AI data is populated with cardsAIData from aiData.js
   cardsAIData.forEach((cardAIData) => {
-    const card = createCard(cardAIData);
-   // cardsContainer.appendChild(card);
+    const card = createCard(cardAIData,"ai.png");
+    cardsContainer.appendChild(card);
+  });
+});
+
+
+document.getElementById("cloud-stack-button").addEventListener("click", function () {
+  // show the login screen again
+  // Need to interate the card data in the JSON. Here data is cardsData
+  const cardsContainer = document.getElementById('cloud-container');
+  
+    // remove all the child elements
+  while (cardsContainer.childElementCount > 0) {
+    cardsContainer.removeChild(cardsContainer.lastChild);
+  }
+  
+  // cloud data is populated with cardsCloudData from cloudData.js
+  cardsCloudData.forEach((cardCloudData) => {
+    const card = createCard(cardCloudData,"cloud.png");
+    cardsContainer.appendChild(card);
   });
 });
 
@@ -113,7 +155,7 @@ document.getElementById("profile").addEventListener("click", function () {
 
 // start of create card data element
 
-function createCard (cardData) {
+function createCard (cardData, imgfile) {
   const cardContainer = document.createElement('div');
   cardContainer.classList.add('col-md-3', 'col-sm-6', 'mb-4');
 
@@ -127,7 +169,7 @@ function createCard (cardData) {
   cardBody.classList.add('card-body', 'smaller-text');
 
   const cardImg = document.createElement('img');
-  cardImg.src = "/images/Mean Stack.png";
+  cardImg.src = "/images/" + imgfile;
   cardImg.style = "width:50px; height:50px";
   cardImg.classList.add('card-img-top');
   cardImg.alt = "...";
@@ -151,6 +193,7 @@ function createCard (cardData) {
 };
 
 // End of create card data element
+
 
 
 

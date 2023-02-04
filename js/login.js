@@ -5,7 +5,6 @@ var form = document.getElementById("loginfrm");
 // Attach an event listener to the form's submit event
 form.addEventListener("submit", function() {
     // Prevent the default form submission behavior
-    alert("Est");
     event.preventDefault();
 
     // Get the input field values
